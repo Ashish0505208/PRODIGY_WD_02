@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: black;
+    margin: 0;
+}
+
+.header p {
+    font-size: 1rem;
+    color: gray;
+    margin: 5px 0 15px;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Keep timer centered */
+    gap: 30px;
+    transition: all 0.5s ease-in-out; /* Smooth movement effect */
+}
+
+/* Stopwatch */
+.stopwatch {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 320px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Timer */
+.time {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+/* Buttons */
+button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.start { background: green; color: white; }
+.stop { background: red; color: white; }
+.lap { background: blue; color: white; }
+.reset { background: orange; color: white; }
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Laps section */
+.laps-container {
+    display: none; /* Hide by default */
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 220px;
+    max-height: 250px;
+    overflow-y: auto;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Show laps when active */
+.laps-container.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Laps fade out when reset */
+.laps-container.collapsing {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Laps */
+.laps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.laps li {
+    background: rgba(0, 123, 255, 0.1);
+    color: black;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    animation: popUp 0.3s ease-in-out;
+}
+
+/* Cool lap animation */
+@keyframes popUp {
+    from {
+        transform: translateY(20px) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
