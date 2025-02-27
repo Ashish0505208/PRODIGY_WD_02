@@ -40,23 +40,23 @@ startButton.addEventListener("click", () => {
     if (!running) {
         running = true;
         timer = setInterval(updateTime, 10);
-        lapsContainer.style.overflowY = "hidden"; // Hide scroll while running
+        lapsContainer.style.overflowY = "hidden";
     }
 });
 
 stopButton.addEventListener("click", () => {
     clearInterval(timer);
     running = false;
-    lapsContainer.style.overflowY = "auto"; // Allow scrolling when stopped
+    lapsContainer.style.overflowY = "auto";
 });
 
 lapButton.addEventListener("click", () => {
     if (!running) return;
 
     if (lapsList.children.length === 0) {
-        lapsContainer.classList.add("active"); // Fade-in effect
-        lapsContainer.style.display = "block"; // Show laps section
-        container.style.justifyContent = "space-between"; // Move timer slightly
+        lapsContainer.classList.add("active");
+        lapsContainer.style.display = "block";
+        container.style.justifyContent = "space-between";
     }
 
     const lapItem = document.createElement("li");
@@ -64,9 +64,8 @@ lapButton.addEventListener("click", () => {
     lapsList.appendChild(lapItem);
     lapCount++;
 
-    // Limit visible laps to 4
     if (lapsList.children.length > 4) {
-        lapsContainer.style.overflowY = "auto"; // Enable scrolling
+        lapsContainer.style.overflowY = "auto";
     }
 });
 
@@ -82,14 +81,12 @@ resetButton.addEventListener("click", () => {
 
     lapsList.innerHTML = "";
     
-    // Add collapsing effect
     lapsContainer.classList.add("collapsing");
     
     setTimeout(() => {
         lapsContainer.classList.remove("active", "collapsing");
-        lapsContainer.style.display = "none"; // Hide laps section
+        lapsContainer.style.display = "none";
         
-        // **Animate timer back to center**
         container.style.justifyContent = "center"; 
         container.style.transition = "all 0.5s ease-in-out";
         

@@ -9,7 +9,6 @@ body {
     margin: 0;
 }
 
-/* Header */
 .header {
     text-align: center;
     margin-bottom: 20px;
@@ -27,16 +26,14 @@ body {
     margin: 5px 0 15px;
 }
 
-/* Main container */
 .container {
     display: flex;
     align-items: center;
-    justify-content: center; /* Keep timer centered */
+    justify-content: center; 
     gap: 30px;
-    transition: all 0.5s ease-in-out; /* Smooth movement effect */
+    transition: all 0.5s ease-in-out;
 }
 
-/* Stopwatch */
 .stopwatch {
     background: #f8f9fa;
     padding: 30px;
@@ -47,7 +44,6 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 
-/* Timer */
 .time {
     font-size: 3rem;
     font-weight: bold;
@@ -59,7 +55,6 @@ body {
     white-space: nowrap;
 }
 
-/* Buttons */
 button {
     font-size: 1.2rem;
     padding: 10px 20px;
@@ -79,9 +74,8 @@ button:hover {
     opacity: 0.8;
 }
 
-/* Laps section */
 .laps-container {
-    display: none; /* Hide by default */
+    display: none; 
     padding: 15px;
     border-radius: 10px;
     min-width: 220px;
@@ -90,21 +84,18 @@ button:hover {
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-/* Show laps when active */
 .laps-container.active {
     display: block;
     opacity: 1;
     transform: scale(1);
 }
 
-/* Laps fade out when reset */
 .laps-container.collapsing {
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Laps */
 .laps {
     list-style: none;
     padding: 0;
@@ -124,7 +115,6 @@ button:hover {
     animation: popUp 0.3s ease-in-out;
 }
 
-/* Cool lap animation */
 @keyframes popUp {
     from {
         transform: translateY(20px) scale(0.5);
